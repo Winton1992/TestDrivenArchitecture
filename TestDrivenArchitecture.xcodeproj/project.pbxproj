@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,10 +12,14 @@
 		E0B16A88247E89FC00AB8EF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16A87247E89FC00AB8EF4 /* SceneDelegate.swift */; };
 		E0B16A8A247E89FC00AB8EF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16A89247E89FC00AB8EF4 /* ViewController.swift */; };
 		E0B16A8D247E89FC00AB8EF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B16A8B247E89FC00AB8EF4 /* Main.storyboard */; };
-		E0B16A8F247E89FD00AB8EF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0B16A8E247E89FD00AB8EF4 /* Assets.xcassets */; };
+		E0B16A8F247E89FD00AB8EF4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0B16A8E247E89FD00AB8EF4 /* Colors.xcassets */; };
 		E0B16A92247E89FD00AB8EF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B16A90247E89FD00AB8EF4 /* LaunchScreen.storyboard */; };
 		E0B16A9D247E89FD00AB8EF4 /* TestDrivenArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16A9C247E89FD00AB8EF4 /* TestDrivenArchitectureTests.swift */; };
 		E0B16AA8247E89FD00AB8EF4 /* TestDrivenArchitectureUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16AA7247E89FD00AB8EF4 /* TestDrivenArchitectureUITests.swift */; };
+		E0B16AB9247E9C6700AB8EF4 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16AB7247E9C6700AB8EF4 /* Assets.swift */; };
+		E0B16ABA247E9C6700AB8EF4 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16AB8247E9C6700AB8EF4 /* Strings.swift */; };
+		E0B16AC6247EAD1C00AB8EF4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0B16AC5247EAD1C00AB8EF4 /* Localizable.strings */; };
+		E0B16AC8247EAD6A00AB8EF4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0B16AC7247EAD6A00AB8EF4 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +48,7 @@
 		E0B16A87247E89FC00AB8EF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E0B16A89247E89FC00AB8EF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E0B16A8C247E89FC00AB8EF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E0B16A8E247E89FD00AB8EF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E0B16A8E247E89FD00AB8EF4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E0B16A91247E89FD00AB8EF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0B16A93247E89FD00AB8EF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0B16A98247E89FD00AB8EF4 /* TestDrivenArchitectureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestDrivenArchitectureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +57,11 @@
 		E0B16AA3247E89FD00AB8EF4 /* TestDrivenArchitectureUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestDrivenArchitectureUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B16AA7247E89FD00AB8EF4 /* TestDrivenArchitectureUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDrivenArchitectureUITests.swift; sourceTree = "<group>"; };
 		E0B16AA9247E89FD00AB8EF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0B16AB5247E96DE00AB8EF4 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		E0B16AB7247E9C6700AB8EF4 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		E0B16AB8247E9C6700AB8EF4 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		E0B16AC5247EAD1C00AB8EF4 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		E0B16AC7247EAD6A00AB8EF4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +96,6 @@
 				A19A54F053D9A49A7D7F8D4A /* Pods-TestDrivenArchitecture.debug.xcconfig */,
 				8C8954AF539B2EDDDB31C735 /* Pods-TestDrivenArchitecture.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -102,6 +110,7 @@
 		E0B16A79247E89FC00AB8EF4 = {
 			isa = PBXGroup;
 			children = (
+				E0B16AB5247E96DE00AB8EF4 /* swiftgen.yml */,
 				E0B16A84247E89FC00AB8EF4 /* TestDrivenArchitecture */,
 				E0B16A9B247E89FD00AB8EF4 /* TestDrivenArchitectureTests */,
 				E0B16AA6247E89FD00AB8EF4 /* TestDrivenArchitectureUITests */,
@@ -124,11 +133,11 @@
 		E0B16A84247E89FC00AB8EF4 /* TestDrivenArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				E0B16ABB247E9EA200AB8EF4 /* Resources */,
 				E0B16A85247E89FC00AB8EF4 /* AppDelegate.swift */,
 				E0B16A87247E89FC00AB8EF4 /* SceneDelegate.swift */,
 				E0B16A89247E89FC00AB8EF4 /* ViewController.swift */,
 				E0B16A8B247E89FC00AB8EF4 /* Main.storyboard */,
-				E0B16A8E247E89FD00AB8EF4 /* Assets.xcassets */,
 				E0B16A90247E89FD00AB8EF4 /* LaunchScreen.storyboard */,
 				E0B16A93247E89FD00AB8EF4 /* Info.plist */,
 			);
@@ -153,6 +162,42 @@
 			path = TestDrivenArchitectureUITests;
 			sourceTree = "<group>";
 		};
+		E0B16AB6247E982000AB8EF4 /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+				E0B16AB7247E9C6700AB8EF4 /* Assets.swift */,
+				E0B16AB8247E9C6700AB8EF4 /* Strings.swift */,
+			);
+			path = SwiftGen;
+			sourceTree = "<group>";
+		};
+		E0B16ABB247E9EA200AB8EF4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E0B16AB6247E982000AB8EF4 /* SwiftGen */,
+				E0B16AC3247EACD900AB8EF4 /* JSON */,
+				E0B16AC2247EACCF00AB8EF4 /* Fonts */,
+				E0B16AC5247EAD1C00AB8EF4 /* Localizable.strings */,
+				E0B16AC7247EAD6A00AB8EF4 /* Images.xcassets */,
+				E0B16A8E247E89FD00AB8EF4 /* Colors.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E0B16AC2247EACCF00AB8EF4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E0B16AC3247EACD900AB8EF4 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -165,6 +210,7 @@
 				E0B16A7F247E89FC00AB8EF4 /* Frameworks */,
 				E0B16A80247E89FC00AB8EF4 /* Resources */,
 				E3658351CBBE76DC577EDCC6 /* [CP] Embed Pods Frameworks */,
+				E0B16AC1247EAAA500AB8EF4 /* SwiftGen */,
 			);
 			buildRules = (
 			);
@@ -260,7 +306,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0B16A92247E89FD00AB8EF4 /* LaunchScreen.storyboard in Resources */,
-				E0B16A8F247E89FD00AB8EF4 /* Assets.xcassets in Resources */,
+				E0B16AC6247EAD1C00AB8EF4 /* Localizable.strings in Resources */,
+				E0B16AC8247EAD6A00AB8EF4 /* Images.xcassets in Resources */,
+				E0B16A8F247E89FD00AB8EF4 /* Colors.xcassets in Resources */,
 				E0B16A8D247E89FC00AB8EF4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +352,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E0B16AC1247EAAA500AB8EF4 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"error: SwiftGen not installed, download from https://github.com/SwiftGen/SwiftGen\"\n  exit 1\nfi\n";
+		};
 		E3658351CBBE76DC577EDCC6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -330,6 +396,8 @@
 			files = (
 				E0B16A8A247E89FC00AB8EF4 /* ViewController.swift in Sources */,
 				E0B16A86247E89FC00AB8EF4 /* AppDelegate.swift in Sources */,
+				E0B16AB9247E9C6700AB8EF4 /* Assets.swift in Sources */,
+				E0B16ABA247E9C6700AB8EF4 /* Strings.swift in Sources */,
 				E0B16A88247E89FC00AB8EF4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

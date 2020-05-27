@@ -2,20 +2,24 @@ PODS:
   - ReactiveCocoa (10.2.0):
     - ReactiveSwift (~> 6.2)
   - ReactiveSwift (6.2.1)
+  - SwiftGen (6.1.0)
 
 DEPENDENCIES:
   - ReactiveCocoa
   - ReactiveSwift (~> 6.1)
+  - SwiftGen (~> 6.0)
 
 SPEC REPOS:
   trunk:
     - ReactiveCocoa
     - ReactiveSwift
+    - SwiftGen
 
 SPEC CHECKSUMS:
   ReactiveCocoa: a123c42f449c552460a4ee217dd49c76a17c8204
   ReactiveSwift: 07ddf579f4eb3ee3bd656214f0461aaf2c0fd639
+  SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
 
-PODFILE CHECKSUM: ae3b364527853e43973481a4327a53c645d04fd7
+PODFILE CHECKSUM: 513e27080f07e72f52e6804c48c16fbdc294fa43
 
 COCOAPODS: 1.9.1
