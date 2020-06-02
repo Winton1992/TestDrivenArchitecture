@@ -14,15 +14,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private var applicationCoordinator: ApplicationCoordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        ///Reference: https://learnappmaking.com/scene-delegate-app-delegate-xcode-11-ios-13/
+        /**
+        - Reference:
+            https://learnappmaking.com/scene-delegate-app-delegate-xcode-11-ios-13/
+            https://stackoverflow.com/questions/58949467/how-to-use-coordinator-pattern-in-xcode-11-ios13-on-uikit
+        */
         if let windowScene = scene as? UIWindowScene {
-             self.window = UIWindow(windowScene: windowScene)
-             if let window = self.window {
-                 let applicationCoordinator = ApplicationCoordinator(window: window)
-                 self.applicationCoordinator = applicationCoordinator
-                 applicationCoordinator.start()
-             }
-         }
+            self.window = UIWindow(windowScene: windowScene)
+            if let window = self.window {
+                let applicationCoordinator = ApplicationCoordinator(window: window)
+                self.applicationCoordinator = applicationCoordinator
+                applicationCoordinator.start()
+            }
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
