@@ -20,6 +20,9 @@
 		E0B16AC6247EAD1C00AB8EF4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0B16AC5247EAD1C00AB8EF4 /* Localizable.strings */; };
 		E0B16AC8247EAD6A00AB8EF4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0B16AC7247EAD6A00AB8EF4 /* Images.xcassets */; };
 		E0B16B092484F85A00AB8EF4 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16B082484F85A00AB8EF4 /* ApplicationCoordinator.swift */; };
+		E0B16B12248625C300AB8EF4 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16B11248625C300AB8EF4 /* SignInViewController.swift */; };
+		E0B16B14248625CF00AB8EF4 /* SignInViewController+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16B13248625CF00AB8EF4 /* SignInViewController+View.swift */; };
+		E0B16B16248625D900AB8EF4 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16B15248625D900AB8EF4 /* SignInViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +46,7 @@
 		8C8954AF539B2EDDDB31C735 /* Pods-TestDrivenArchitecture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDrivenArchitecture.release.xcconfig"; path = "Target Support Files/Pods-TestDrivenArchitecture/Pods-TestDrivenArchitecture.release.xcconfig"; sourceTree = "<group>"; };
 		A19A54F053D9A49A7D7F8D4A /* Pods-TestDrivenArchitecture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDrivenArchitecture.debug.xcconfig"; path = "Target Support Files/Pods-TestDrivenArchitecture/Pods-TestDrivenArchitecture.debug.xcconfig"; sourceTree = "<group>"; };
 		CFE813582805F810B2E4A986 /* Pods_TestDrivenArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestDrivenArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0B16A82247E89FC00AB8EF4 /* TestDrivenArchitecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestDrivenArchitecture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0B16A82247E89FC00AB8EF4 /* Wine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B16A85247E89FC00AB8EF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0B16A87247E89FC00AB8EF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E0B16A89247E89FC00AB8EF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +65,9 @@
 		E0B16AC5247EAD1C00AB8EF4 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		E0B16AC7247EAD6A00AB8EF4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E0B16B082484F85A00AB8EF4 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		E0B16B11248625C300AB8EF4 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		E0B16B13248625CF00AB8EF4 /* SignInViewController+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInViewController+View.swift"; sourceTree = "<group>"; };
+		E0B16B15248625D900AB8EF4 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +129,7 @@
 		E0B16A83247E89FC00AB8EF4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E0B16A82247E89FC00AB8EF4 /* TestDrivenArchitecture.app */,
+				E0B16A82247E89FC00AB8EF4 /* Wine.app */,
 				E0B16A98247E89FD00AB8EF4 /* TestDrivenArchitectureTests.xctest */,
 				E0B16AA3247E89FD00AB8EF4 /* TestDrivenArchitectureUITests.xctest */,
 			);
@@ -133,6 +139,7 @@
 		E0B16A84247E89FC00AB8EF4 /* TestDrivenArchitecture */ = {
 			isa = PBXGroup;
 			children = (
+				E0B16B0D248623E200AB8EF4 /* Scenes */,
 				E0B16B072484F1B900AB8EF4 /* Application Coordinator */,
 				E0B16AC9247F733100AB8EF4 /* Supporting Files */,
 				E0B16ABB247E9EA200AB8EF4 /* Resources */,
@@ -214,6 +221,32 @@
 			path = "Application Coordinator";
 			sourceTree = "<group>";
 		};
+		E0B16B0D248623E200AB8EF4 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E0B16B0F2486247700AB8EF4 /* Authentication */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E0B16B0F2486247700AB8EF4 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				E0B16B102486248200AB8EF4 /* Sign In */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		E0B16B102486248200AB8EF4 /* Sign In */ = {
+			isa = PBXGroup;
+			children = (
+				E0B16B11248625C300AB8EF4 /* SignInViewController.swift */,
+				E0B16B13248625CF00AB8EF4 /* SignInViewController+View.swift */,
+				E0B16B15248625D900AB8EF4 /* SignInViewModel.swift */,
+			);
+			path = "Sign In";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -234,7 +267,7 @@
 			);
 			name = TestDrivenArchitecture;
 			productName = TestDrivenArchitecture;
-			productReference = E0B16A82247E89FC00AB8EF4 /* TestDrivenArchitecture.app */;
+			productReference = E0B16A82247E89FC00AB8EF4 /* Wine.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E0B16A97247E89FD00AB8EF4 /* TestDrivenArchitectureTests */ = {
@@ -409,12 +442,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0B16B12248625C300AB8EF4 /* SignInViewController.swift in Sources */,
 				E0B16A8A247E89FC00AB8EF4 /* ViewController.swift in Sources */,
 				E0B16A86247E89FC00AB8EF4 /* AppDelegate.swift in Sources */,
 				E0B16AB9247E9C6700AB8EF4 /* Assets.swift in Sources */,
 				E0B16ABA247E9C6700AB8EF4 /* Strings.swift in Sources */,
+				E0B16B16248625D900AB8EF4 /* SignInViewModel.swift in Sources */,
 				E0B16A88247E89FC00AB8EF4 /* SceneDelegate.swift in Sources */,
 				E0B16B092484F85A00AB8EF4 /* ApplicationCoordinator.swift in Sources */,
+				E0B16B14248625CF00AB8EF4 /* SignInViewController+View.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,7 +624,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.weijie.TestDrivenArchitecture;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Wine;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -607,7 +643,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.weijie.TestDrivenArchitecture;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Wine;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
