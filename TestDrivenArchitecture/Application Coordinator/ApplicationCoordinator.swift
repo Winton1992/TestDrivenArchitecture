@@ -26,7 +26,7 @@ class ApplicationCoordinator {
      - Returns: Void
      */
     func start() {
-        let vc = ViewController()
+        let vc = SignInViewController()
         self.window.rootViewController = vc
         self.window.makeKeyAndVisible()
     }

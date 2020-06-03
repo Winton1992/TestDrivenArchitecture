@@ -6,7 +6,11 @@ target 'TestDrivenArchitecture' do
   use_frameworks!
 
   # Pods for TestDrivenArchitecture
+  pod "Device", '~> 3.2.1'
+  pod 'IQKeyboardManagerSwift'
   pod 'ReactiveCocoa'
   pod 'ReactiveSwift', '~> 6.1'
   pod 'SwiftGen', '~> 6.0'
+  pod 'SnapKit', '~> 5.0.0'
+  pod 'TransitionButton'
 end
