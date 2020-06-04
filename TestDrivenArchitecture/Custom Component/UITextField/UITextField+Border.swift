@@ -18,4 +18,15 @@ extension UITextField {
         self.layer.shadowOpacity = 1.0
         self.layer.shadowRadius = 0.0
     }
+    
+    func setAttributes(placeHolderValue: String) {
+        self.font = UIFont.systemFont(ofSize: 14)
+        self.textColor = .white
+        self.backgroundColor = Asset.Colors.wine.color
+        self.setBottomBorder()
+        self.attributedPlaceholder = NSAttributedString(
+            string: placeHolderValue,
+            attributes: [.foregroundColor: UIColor.white])
+        self.autocapitalizationType = .none
+    }
 }
