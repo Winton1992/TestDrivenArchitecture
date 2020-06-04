@@ -11,8 +11,10 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
-  /// Welcome Home
-  internal static let welcomeHome = L10n.tr("Localizable", "welcome_home")
+  /// Email or password cannot be empty.
+  internal static let emailOrPasswordCannotBeEmpty = L10n.tr("Localizable", "email_or_password_cannot_be_empty")
+  /// Email or password is incorrect.
+  internal static let emailOrPasswordIsIncorrect = L10n.tr("Localizable", "email_or_password_is_incorrect")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name

@@ -15,6 +15,7 @@ extension SignInViewController {
     func setupScene() {
         setupEmailTextField()
         setupPasswordTextField()
+        setupErrorLabel()
         setupLoginButton()
     }
 
@@ -32,6 +33,7 @@ extension SignInViewController {
 
     private func setupPasswordTextField() {
         passwordTextField.setAttributes(placeHolderValue: "PASSWORD")
+        passwordTextField.isSecureTextEntry = true
 
         view.addSubview(passwordTextField)
 
@@ -42,17 +44,32 @@ extension SignInViewController {
             make.right.equalTo(emailTextField.snp.right)
         }
     }
+    
+    private func setupErrorLabel() {
+        errorLabel.textAlignment = .center
+        errorLabel.textColor = .white
+        errorLabel.isHidden = true
+        errorLabel.font = UIFont.systemFont(ofSize: 12)
+        errorLabel.numberOfLines = 0
+        view.addSubview(errorLabel)
+        errorLabel.snp.makeConstraints { make in
+            make.top.equalTo(passwordTextField.snp.bottom)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(50)
+            make.left.right.equalToSuperview().inset(30)
+        }
+    }
 
     private func setupLoginButton() {
-        SignInButton.setTitle("Go", for: .normal)
-        SignInButton.backgroundColor = Asset.Colors.wine.color
-        SignInButton.cornerRadius = 5.0
-        SignInButton.spinnerColor = .white
-        SignInButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
+        signInButton.setTitle("Go", for: .normal)
+        signInButton.backgroundColor = Asset.Colors.wine.color
+        signInButton.cornerRadius = 5.0
+        signInButton.spinnerColor = .white
+        signInButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
 
-        view.addSubview(SignInButton)
+        view.addSubview(signInButton)
 
-        SignInButton.snp.makeConstraints { make in
+        signInButton.snp.makeConstraints { make in
             make.top.equalTo(passwordTextField.snp.bottom).offset(50)
             make.height.equalTo(emailTextField.snp.height)
             make.left.equalTo(emailTextField.snp.left)

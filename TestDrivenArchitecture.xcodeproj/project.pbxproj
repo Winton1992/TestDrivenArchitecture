@@ -10,7 +10,6 @@
 		022A183FF46493DEDDFCED27 /* Pods_TestDrivenArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE813582805F810B2E4A986 /* Pods_TestDrivenArchitecture.framework */; };
 		E0B16A86247E89FC00AB8EF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16A85247E89FC00AB8EF4 /* AppDelegate.swift */; };
 		E0B16A88247E89FC00AB8EF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16A87247E89FC00AB8EF4 /* SceneDelegate.swift */; };
-		E0B16A8A247E89FC00AB8EF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16A89247E89FC00AB8EF4 /* ViewController.swift */; };
 		E0B16A8F247E89FD00AB8EF4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0B16A8E247E89FD00AB8EF4 /* Colors.xcassets */; };
 		E0B16A92247E89FD00AB8EF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0B16A90247E89FD00AB8EF4 /* LaunchScreen.storyboard */; };
 		E0B16A9D247E89FD00AB8EF4 /* TestDrivenArchitectureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16A9C247E89FD00AB8EF4 /* TestDrivenArchitectureTests.swift */; };
@@ -50,7 +49,6 @@
 		E0B16A82247E89FC00AB8EF4 /* Wine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0B16A85247E89FC00AB8EF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0B16A87247E89FC00AB8EF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E0B16A89247E89FC00AB8EF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E0B16A8E247E89FD00AB8EF4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		E0B16A91247E89FD00AB8EF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0B16A93247E89FD00AB8EF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 				E0B16ABB247E9EA200AB8EF4 /* Resources */,
 				E0B16A85247E89FC00AB8EF4 /* AppDelegate.swift */,
 				E0B16A87247E89FC00AB8EF4 /* SceneDelegate.swift */,
-				E0B16A89247E89FC00AB8EF4 /* ViewController.swift */,
 				E0B16A93247E89FD00AB8EF4 /* Info.plist */,
 			);
 			path = TestDrivenArchitecture;
@@ -235,6 +232,7 @@
 		E0B16B0F2486247700AB8EF4 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				E0B16B272488E34A00AB8EF4 /* Main */,
 				E0B16B102486248200AB8EF4 /* Sign In */,
 			);
 			path = Authentication;
@@ -264,6 +262,13 @@
 				E0B16B1924868ECE00AB8EF4 /* UITextField+Border.swift */,
 			);
 			path = UITextField;
+			sourceTree = "<group>";
+		};
+		E0B16B272488E34A00AB8EF4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,7 +468,6 @@
 			files = (
 				E0B16B12248625C300AB8EF4 /* SignInViewController.swift in Sources */,
 				E0B16B1A24868ECE00AB8EF4 /* UITextField+Border.swift in Sources */,
-				E0B16A8A247E89FC00AB8EF4 /* ViewController.swift in Sources */,
 				E0B16A86247E89FC00AB8EF4 /* AppDelegate.swift in Sources */,
 				E0B16AB9247E9C6700AB8EF4 /* Assets.swift in Sources */,
 				E0B16ABA247E9C6700AB8EF4 /* Strings.swift in Sources */,
