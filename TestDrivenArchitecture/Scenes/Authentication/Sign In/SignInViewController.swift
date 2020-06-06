@@ -11,6 +11,10 @@ import UIKit
 import TransitionButton
 import ReactiveCocoa
 
+protocol SignInViewControllerDelegate: class {
+    func signInViewControllerDidPSuccessfullySignIn(_ source: SignInViewController)
+}
+
 class SignInViewController: UIViewController, UITextFieldDelegate {
 
     var bounds = UIScreen.main.bounds
@@ -19,6 +23,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     var errorLabel: UILabel = UILabel()
     var signInButton: TransitionButton = TransitionButton()
     var viewModel: SignInViewModel
+    weak var delegate: SignInViewControllerDelegate?
 
     init(viewModel: SignInViewModel) {
         self.viewModel = viewModel
@@ -66,8 +71,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         viewModel.signInResult.signal.observeValues { values in
             switch values {
             case true:
-                self.signInButton.stopAnimation(animationStyle: .expand, completion: {
-                    //self.delegate?.signInViewControllerDidPSuccessfullySignIn(self)
+                self.signInButton.stopAnimation(animationStyle: .normal, completion: {
+                    self.delegate?.signInViewControllerDidPSuccessfullySignIn(self)
                 })
             case false:
                 self.signInButton.stopAnimation(animationStyle: .shake, completion: {

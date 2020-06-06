@@ -28,7 +28,13 @@ class ApplicationCoordinator {
     func start() {
         let vm = SignInViewModel()
         let vc = SignInViewController(viewModel: vm)
+        vc.delegate = self
         self.window.rootViewController = vc
         self.window.makeKeyAndVisible()
+    }
+    
+    func setupTabBarController() {
+        let mainVC = MainTabBarViewController()
+        self.window.rootViewController = mainVC
     }
 }

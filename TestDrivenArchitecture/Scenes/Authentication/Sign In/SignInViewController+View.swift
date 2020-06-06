@@ -64,7 +64,6 @@ extension SignInViewController {
         signInButton.setTitle("Go", for: .normal)
         signInButton.backgroundColor = Asset.Colors.wine.color
         signInButton.cornerRadius = 5.0
-        signInButton.spinnerColor = .white
         signInButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
 
         view.addSubview(signInButton)
