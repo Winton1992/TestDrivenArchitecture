@@ -71,7 +71,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         viewModel.signInResult.signal.observeValues { values in
             switch values {
             case true:
-                self.signInButton.stopAnimation(animationStyle: .normal, completion: {
+                self.signInButton.stopAnimation(animationStyle: .expand, completion: {
                     self.delegate?.signInViewControllerDidPSuccessfullySignIn(self)
                 })
             case false:

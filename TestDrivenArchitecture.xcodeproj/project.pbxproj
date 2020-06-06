@@ -29,6 +29,12 @@
 		E0B16B2D2488F5BD00AB8EF4 /* ApplicationCoordinator+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16B2C2488F5BD00AB8EF4 /* ApplicationCoordinator+Auth.swift */; };
 		E0B16B2E2488F5BD00AB8EF4 /* ApplicationCoordinator+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16B2C2488F5BD00AB8EF4 /* ApplicationCoordinator+Auth.swift */; };
 		E0B16B2F2488F5BD00AB8EF4 /* ApplicationCoordinator+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16B2C2488F5BD00AB8EF4 /* ApplicationCoordinator+Auth.swift */; };
+		E0B16B32248B1EF600AB8EF4 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16B30248B1EF500AB8EF4 /* JSON.swift */; };
+		E0B16B33248B1EF600AB8EF4 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16B30248B1EF500AB8EF4 /* JSON.swift */; };
+		E0B16B34248B1EF600AB8EF4 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16B30248B1EF500AB8EF4 /* JSON.swift */; };
+		E0B16B35248B1EF600AB8EF4 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16B31248B1EF600AB8EF4 /* Fonts.swift */; };
+		E0B16B36248B1EF600AB8EF4 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16B31248B1EF600AB8EF4 /* Fonts.swift */; };
+		E0B16B37248B1EF600AB8EF4 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B16B31248B1EF600AB8EF4 /* Fonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +82,8 @@
 		E0B16B1924868ECE00AB8EF4 /* UITextField+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Border.swift"; sourceTree = "<group>"; };
 		E0B16B282488E65300AB8EF4 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		E0B16B2C2488F5BD00AB8EF4 /* ApplicationCoordinator+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApplicationCoordinator+Auth.swift"; sourceTree = "<group>"; };
+		E0B16B30248B1EF500AB8EF4 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		E0B16B31248B1EF600AB8EF4 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +188,8 @@
 		E0B16AB6247E982000AB8EF4 /* SwiftGen */ = {
 			isa = PBXGroup;
 			children = (
+				E0B16B31248B1EF600AB8EF4 /* Fonts.swift */,
+				E0B16B30248B1EF500AB8EF4 /* JSON.swift */,
 				E0B16AB7247E9C6700AB8EF4 /* Assets.swift */,
 				E0B16AB8247E9C6700AB8EF4 /* Strings.swift */,
 			);
@@ -478,7 +488,9 @@
 			files = (
 				E0B16B12248625C300AB8EF4 /* SignInViewController.swift in Sources */,
 				E0B16B1A24868ECE00AB8EF4 /* UITextField+Border.swift in Sources */,
+				E0B16B35248B1EF600AB8EF4 /* Fonts.swift in Sources */,
 				E0B16A86247E89FC00AB8EF4 /* AppDelegate.swift in Sources */,
+				E0B16B32248B1EF600AB8EF4 /* JSON.swift in Sources */,
 				E0B16B2D2488F5BD00AB8EF4 /* ApplicationCoordinator+Auth.swift in Sources */,
 				E0B16AB9247E9C6700AB8EF4 /* Assets.swift in Sources */,
 				E0B16ABA247E9C6700AB8EF4 /* Strings.swift in Sources */,
@@ -495,8 +507,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0B16A9D247E89FD00AB8EF4 /* TestDrivenArchitectureTests.swift in Sources */,
+				E0B16B36248B1EF600AB8EF4 /* Fonts.swift in Sources */,
 				E0B16B2E2488F5BD00AB8EF4 /* ApplicationCoordinator+Auth.swift in Sources */,
 				E0B16B2A2488E65300AB8EF4 /* MainTabBarViewController.swift in Sources */,
+				E0B16B33248B1EF600AB8EF4 /* JSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,8 +519,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0B16AA8247E89FD00AB8EF4 /* TestDrivenArchitectureUITests.swift in Sources */,
+				E0B16B37248B1EF600AB8EF4 /* Fonts.swift in Sources */,
 				E0B16B2F2488F5BD00AB8EF4 /* ApplicationCoordinator+Auth.swift in Sources */,
 				E0B16B2B2488E65300AB8EF4 /* MainTabBarViewController.swift in Sources */,
+				E0B16B34248B1EF600AB8EF4 /* JSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

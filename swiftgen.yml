@@ -1,15 +1,3 @@
-#strings:
-#  inputs: TestDrivenArchitecture/Base.lproj
-#  filter: .+\.strings$
-#  outputs:
-#    - templateName: structured-swift4
-#      output: TestDrivenArchitecture/SwiftGen/strings.swift
-#xcassets:
-#  inputs: TestDrivenArchitecture/Assets.xcassets
-#  outputs:
-#    - templateName: swift4
-#      output: TestDrivenArchitecture/SwiftGen/assets.swift
-
 input_dir: TestDrivenArchitecture/Resources/
 output_dir: TestDrivenArchitecture/Resources/SwiftGen
 xcassets:
