@@ -12,7 +12,8 @@ import TransitionButton
 import ReactiveCocoa
 
 protocol SignInViewControllerDelegate: class {
-    func signInViewControllerDidPSuccessfullySignIn(_ source: SignInViewController)
+    func signInViewControllerDidSuccessfullySignIn(_ source: SignInViewController)
+    func signInViewControllerDidTapSignUp(_ source: SignInViewController)
 }
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
@@ -22,6 +23,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     var passwordTextField: UITextField = UITextField()
     var errorLabel: UILabel = UILabel()
     var signInButton: TransitionButton = TransitionButton()
+    var signUpButton: UIButton = UIButton()
     var viewModel: SignInViewModel
     weak var delegate: SignInViewControllerDelegate?
 
@@ -37,7 +39,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
 
     override func loadView() {
         super.loadView()
-        view.backgroundColor = Asset.Colors.wine.color
+        view.backgroundColor = .white
         setupScene()
     }
 
@@ -68,11 +70,16 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 })
             }
         }
+        signUpButton.reactive.controlEvents(.touchUpInside).observeValues { [weak self] _ in
+            if let self = self {
+                self.delegate?.signInViewControllerDidTapSignUp(self)
+            }
+        }
         viewModel.signInResult.signal.observeValues { values in
             switch values {
             case true:
                 self.signInButton.stopAnimation(animationStyle: .expand, completion: {
-                    self.delegate?.signInViewControllerDidPSuccessfullySignIn(self)
+                    self.delegate?.signInViewControllerDidSuccessfullySignIn(self)
                 })
             case false:
                 self.signInButton.stopAnimation(animationStyle: .shake, completion: {

@@ -10,7 +10,14 @@ import Foundation
 import UIKit
 
 extension ApplicationCoordinator: SignInViewControllerDelegate {
-    func signInViewControllerDidPSuccessfullySignIn(_ source: SignInViewController) {
+    func signInViewControllerDidSuccessfullySignIn(_ source: SignInViewController) {
         setupTabBarController()
+    }
+    
+    func signInViewControllerDidTapSignUp(_ from: SignInViewController) {
+        let signUpVC = SignUpViewController()
+        if let navVc = self.window.rootViewController as? UINavigationController {
+            navVc.fadeTo(signUpVC)
+        }
     }
 }

@@ -16,7 +16,8 @@ extension SignInViewController {
         setupEmailTextField()
         setupPasswordTextField()
         setupErrorLabel()
-        setupLoginButton()
+        setupSignInButton()
+        setupSignUpButton()
     }
 
     private func setupEmailTextField() {
@@ -60,11 +61,11 @@ extension SignInViewController {
         }
     }
 
-    private func setupLoginButton() {
+    private func setupSignInButton() {
         signInButton.setTitle("Go", for: .normal)
         signInButton.backgroundColor = Asset.Colors.wine.color
         signInButton.cornerRadius = 5.0
-        signInButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
+        signInButton.titleLabel?.font = UIFont.systemFont(ofSize: 22)
 
         view.addSubview(signInButton)
 
@@ -73,6 +74,22 @@ extension SignInViewController {
             make.height.equalTo(emailTextField.snp.height)
             make.left.equalTo(emailTextField.snp.left)
             make.right.equalTo(emailTextField.snp.right)
+        }
+    }
+    
+    private func setupSignUpButton() {
+        signUpButton.setTitle("Create Account", for: .normal)
+        signUpButton.setTitleColor(Asset.Colors.defaultBlack.color, for: .normal)
+        signUpButton.backgroundColor = .white
+        signUpButton.titleLabel?.font = UIFont.systemFont(ofSize: 22)
+
+        view.addSubview(signUpButton)
+
+        signUpButton.snp.makeConstraints { make in
+            make.height.equalTo(emailTextField.snp.height)
+            make.left.equalTo(emailTextField.snp.left)
+            make.right.equalTo(emailTextField.snp.right)
+            make.bottom.equalToSuperview().offset(-30)
         }
     }
 }

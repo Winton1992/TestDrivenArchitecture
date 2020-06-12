@@ -29,7 +29,8 @@ class ApplicationCoordinator {
         let vm = SignInViewModel()
         let vc = SignInViewController(viewModel: vm)
         vc.delegate = self
-        self.window.rootViewController = vc
+        let navigationVC = UINavigationController(rootViewController: vc)
+        self.window.rootViewController = navigationVC
         self.window.makeKeyAndVisible()
     }
     
