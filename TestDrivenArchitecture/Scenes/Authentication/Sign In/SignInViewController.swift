@@ -55,16 +55,19 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             .textValues
             .observeValues(self.viewModel.inputs.passwordChanged(password:))
         signInButton.reactive.controlEvents(.touchUpInside).observeValues { [weak self] _ in
+            /**
+             Disable them because the network is not always stable,
+             and we don't want the user to change any of them while sending request
+            */
+            self?.isEnableTextFields(value: false)
             self?.signInButton.startAnimation()
             if self?.emailTextField.text != "",
                 self?.passwordTextField.text != "" {
-                self?.emailTextField.isEnabled = false
-                self?.passwordTextField.isEnabled = false
+                self?.isEnableTextFields(value: false)
                 self?.viewModel.inputs.signInButtonPressed()
             } else {
                 self?.signInButton.stopAnimation(animationStyle: .shake, completion: {
-                    self?.emailTextField.isEnabled = true
-                    self?.passwordTextField.isEnabled = true
+                    self?.isEnableTextFields(value: true)
                     self?.errorLabel.isHidden = false
                     self?.errorLabel.text = L10n.emailOrPasswordCannotBeEmpty
                 })
@@ -83,13 +86,17 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 })
             case false:
                 self.signInButton.stopAnimation(animationStyle: .shake, completion: {
-                    self.emailTextField.isEnabled = true
-                    self.passwordTextField.isEnabled = true
+                    self.isEnableTextFields(value: true)
                     self.errorLabel.isHidden = false
                     self.errorLabel.text = L10n.emailOrPasswordIsIncorrect
                 })
             }
         }
+    }
+    
+    private func isEnableTextFields(value: Bool) {
+        self.emailTextField.isEnabled = value
+        self.passwordTextField.isEnabled = value
     }
 
 }

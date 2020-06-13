@@ -12,7 +12,19 @@ import UIKit
 extension ApplicationCoordinator {
     
     func pushSignUpView() {
-        let signUpVC = SignUpViewController()
-        self.window.rootViewController = signUpVC
+        let signUpVM = SignUpViewModel()
+        let signUpVC = SignUpViewController(viewModel: signUpVM)
+        signUpVC.delegate = self
+        if let navVc = self.window.rootViewController as? UINavigationController {
+            navVc.fadeTo(signUpVC)
+        }
+    }
+    
+    func pushSignInView() {
+        let vm = SignInViewModel()
+        let vc = SignInViewController(viewModel: vm)
+        vc.delegate = self
+        let navigationVC = UINavigationController(rootViewController: vc)
+        self.window.rootViewController = navigationVC
     }
 }

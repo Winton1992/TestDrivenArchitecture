@@ -11,10 +11,14 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name
 internal enum L10n {
+  /// All the textfields with * cannot be empty.
+  internal static let allTheTextfieldsWithConnotBeEmpty = L10n.tr("Localizable", "all_the_textfields_with_connot_be_empty")
   /// Email or password cannot be empty.
   internal static let emailOrPasswordCannotBeEmpty = L10n.tr("Localizable", "email_or_password_cannot_be_empty")
   /// Email or password is incorrect.
   internal static let emailOrPasswordIsIncorrect = L10n.tr("Localizable", "email_or_password_is_incorrect")
+  /// Password and confirmed password are different.
+  internal static let passwordAndConfirmedPasswordAreDifferent = L10n.tr("Localizable", "password_and_confirmed_password_are_different")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name

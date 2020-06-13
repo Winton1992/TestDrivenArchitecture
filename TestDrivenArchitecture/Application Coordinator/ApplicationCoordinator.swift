@@ -11,6 +11,7 @@ import UIKit
 
 class ApplicationCoordinator {
     let window: UIWindow
+    let defaults = UserDefaults.standard
     
     /// Initialize with parameter UIWindow
     /// - Parameter window: UIWindow
@@ -26,16 +27,18 @@ class ApplicationCoordinator {
      - Returns: Void
      */
     func start() {
-        let vm = SignInViewModel()
-        let vc = SignInViewController(viewModel: vm)
-        vc.delegate = self
-        let navigationVC = UINavigationController(rootViewController: vc)
-        self.window.rootViewController = navigationVC
+        let loginStatus = defaults.bool(forKey: "LoginStatus")
+        if loginStatus == true {
+            setupTabBarController()
+        } else {
+            pushSignInView()
+        }
         self.window.makeKeyAndVisible()
     }
     
     func setupTabBarController() {
         let mainVC = MainTabBarViewController()
-        self.window.rootViewController = mainVC
+        let mainNavigationController = UINavigationController(rootViewController: mainVC)
+        self.window.rootViewController = mainNavigationController
     }
 }

@@ -157,6 +157,13 @@
 			path = UINavigationController;
 			sourceTree = "<group>";
 		};
+		E0099F262493BAE4009F9322 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		E0664DF32491140D0081DE5A /* Sign Up */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				E0B16B1724868E8F00AB8EF4 /* Custom Component */,
+				E0099F262493BAE4009F9322 /* Models */,
 				E0B16B072484F1B900AB8EF4 /* Application Coordinator */,
 				E0B16B0D248623E200AB8EF4 /* Scenes */,
 				E0B16AC9247F733100AB8EF4 /* Supporting Files */,
@@ -754,7 +762,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.weijie.TestDrivenArchitecture;
+				PRODUCT_BUNDLE_IDENTIFIER = com.winton.TestDrivenArchitecture;
 				PRODUCT_NAME = Wine;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

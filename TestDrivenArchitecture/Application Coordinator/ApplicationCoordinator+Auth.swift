@@ -15,9 +15,13 @@ extension ApplicationCoordinator: SignInViewControllerDelegate {
     }
     
     func signInViewControllerDidTapSignUp(_ from: SignInViewController) {
-        let signUpVC = SignUpViewController()
-        if let navVc = self.window.rootViewController as? UINavigationController {
-            navVc.fadeTo(signUpVC)
-        }
+        pushSignUpView()
+    }
+}
+
+extension ApplicationCoordinator: SignUpViewControllerDelegate {
+    func signUpViewControllerDidSuccessfullySignUp(_ source: SignUpViewController) {
+        print("I am here")
+        setupTabBarController()
     }
 }

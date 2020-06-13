@@ -21,7 +21,7 @@ extension SignInViewController {
     }
 
     private func setupEmailTextField() {
-        emailTextField.setAttributes(placeHolderValue: "EMAIL")
+        emailTextField.setAttributes(placeHolderValue: "Email")
 
         view.addSubview(emailTextField)
 
@@ -33,7 +33,7 @@ extension SignInViewController {
     }
 
     private func setupPasswordTextField() {
-        passwordTextField.setAttributes(placeHolderValue: "PASSWORD")
+        passwordTextField.setAttributes(placeHolderValue: "Password")
         passwordTextField.isSecureTextEntry = true
 
         view.addSubview(passwordTextField)
@@ -48,7 +48,7 @@ extension SignInViewController {
     
     private func setupErrorLabel() {
         errorLabel.textAlignment = .center
-        errorLabel.textColor = .white
+        errorLabel.textColor = Asset.Colors.defaultBlack.color
         errorLabel.isHidden = true
         errorLabel.font = UIFont.systemFont(ofSize: 12)
         errorLabel.numberOfLines = 0
