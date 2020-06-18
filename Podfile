@@ -13,4 +13,8 @@ target 'TestDrivenArchitecture' do
   pod 'SwiftGen', '~> 6.0'
   pod 'SnapKit', '~> 5.0.0'
   pod 'TransitionButton'
+  
+  target 'TestDrivenArchitectureTests' do
+      inherit! :search_paths
+  end
 end

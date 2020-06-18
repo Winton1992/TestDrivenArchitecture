@@ -17,8 +17,6 @@ internal enum L10n {
   internal static let emailOrPasswordCannotBeEmpty = L10n.tr("Localizable", "email_or_password_cannot_be_empty")
   /// Email or password is incorrect.
   internal static let emailOrPasswordIsIncorrect = L10n.tr("Localizable", "email_or_password_is_incorrect")
-  /// Password and confirmed password are different.
-  internal static let passwordAndConfirmedPasswordAreDifferent = L10n.tr("Localizable", "password_and_confirmed_password_are_different")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name

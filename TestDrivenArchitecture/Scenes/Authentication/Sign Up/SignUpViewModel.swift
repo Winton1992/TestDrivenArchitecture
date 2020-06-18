@@ -9,6 +9,11 @@
 import Foundation
 import ReactiveSwift
 
+struct AuthResult {
+    var ifPass: Bool = false
+    var message: String = ""
+}
+
 protocol SignUpViewModelInputs {
     func emailChanged(email: String)
     func passwordChanged(password: String)
@@ -16,7 +21,7 @@ protocol SignUpViewModelInputs {
 }
 
 protocol SignUpViewModelOutputs {
-    var signUpResult: MutableProperty<Bool> { get }
+    var signUpResult: MutableProperty<AuthResult> { get }
 }
 
 protocol SignUpViewModelType {
@@ -28,7 +33,7 @@ class SignUpViewModel: SignUpViewModelInputs, SignUpViewModelOutputs, SignUpView
     var inputs: SignUpViewModelInputs { return self }
     var outputs: SignUpViewModelOutputs { return self }
     let defaults = UserDefaults.standard
-    var signUpResult: MutableProperty<Bool> = MutableProperty(false)
+    var signUpResult: MutableProperty<AuthResult> = MutableProperty(AuthResult())
     
     init() {
         let formData = Signal.combineLatest(emailChangedProperty.signal,
@@ -60,6 +65,7 @@ class SignUpViewModel: SignUpViewModelInputs, SignUpViewModelOutputs, SignUpView
         defaults.set(email, forKey: "Email")
         defaults.set(password, forKey: "Password")
         defaults.set(true, forKey: "LoginStatus")
-        signUpResult.value = true
+        signUpResult.value.ifPass = true
+        signUpResult.value.message = ""
     }
 }

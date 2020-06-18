@@ -60,28 +60,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             self?.isEnableTextFields(value: false)
             self?.signUpButton.startAnimation()
             // Quick validation of user input
-            if self?.emailTextField.text != "",
-                self?.passwordTextField.text != "",
-                self?.passwordConfirmTextField.text != "" {
-                if self?.passwordTextField.text != self?.passwordConfirmTextField.text {
-                    self?.signUpButton.stopAnimation(animationStyle: .shake, completion: {
-                        self?.isEnableTextFields(value: true)
-                        self?.errorLabel.isHidden = false
-                        self?.errorLabel.text = L10n.passwordAndConfirmedPasswordAreDifferent
-                    })
-                } else {
-                    self?.viewModel.inputs.signUpButtonPressed()
-                }
-            } else {
-                self?.signUpButton.stopAnimation(animationStyle: .shake, completion: {
-                    self?.isEnableTextFields(value: true)
-                    self?.errorLabel.isHidden = false
-                    self?.errorLabel.text = L10n.allTheTextfieldsWithConnotBeEmpty
-                })
-            }
+            self?.validate()
         }
-        viewModel.signUpResult.signal.observeValues { values in
-            switch values {
+        viewModel.signUpResult.signal.observeValues { result in
+            switch result.ifPass {
             case true:
                 self.signUpButton.stopAnimation(animationStyle: .expand, completion: {
                     self.delegate?.signUpViewControllerDidSuccessfullySignUp(self)
@@ -90,7 +72,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 self.signUpButton.stopAnimation(animationStyle: .shake, completion: {
                     self.isEnableTextFields(value: true)
                     self.errorLabel.isHidden = false
-                    self.errorLabel.text = L10n.emailOrPasswordIsIncorrect
+                    self.errorLabel.text = result.message
                 })
             }
         }
@@ -100,5 +82,37 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.emailTextField.isEnabled = value
         self.passwordTextField.isEnabled = value
         self.passwordConfirmTextField.isEnabled = value
+    }
+    
+    private func validate() {
+        if self.emailTextField.text?.isEmpty == true {
+            stopAnimation(errorMessage: Errors.SignUp.emailEmpty)
+        } else if let email = self.emailTextField.text {
+            if isValidEmail(email: email) == false {
+                stopAnimation(errorMessage: Errors.SignUp.emailInvalid)
+            } else if self.passwordTextField.text?.isEmpty == true {
+                stopAnimation(errorMessage: Errors.SignUp.passwordEmpty)
+            } else if self.passwordConfirmTextField.text?.isEmpty == true {
+                stopAnimation(errorMessage: Errors.SignUp.passwordConfirmEmpty)
+            } else if self.passwordTextField.text != self.passwordConfirmTextField.text {
+                self.signUpButton.stopAnimation(animationStyle: .shake, completion: {
+                    self.stopAnimation(errorMessage: Errors.SignUp.passwordNotMatch)
+                })
+            } else {
+                self.viewModel.inputs.signUpButtonPressed()
+            }
+        }
+    }
+    
+    private func stopAnimation(errorMessage: String) {
+        self.signUpButton.stopAnimation(animationStyle: .shake, completion: {
+            self.isEnableTextFields(value: true)
+            self.errorLabel.isHidden = false
+            self.errorLabel.text = errorMessage
+        })
+    }
+    
+    func isValidEmail(email: String) -> Bool {
+        return email.contains("@") && email.contains(".")
     }
 }
