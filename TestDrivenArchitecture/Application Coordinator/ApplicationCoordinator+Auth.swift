@@ -21,7 +21,6 @@ extension ApplicationCoordinator: SignInViewControllerDelegate {
 
 extension ApplicationCoordinator: SignUpViewControllerDelegate {
     func signUpViewControllerDidSuccessfullySignUp(_ source: SignUpViewController) {
-        print("I am here")
         setupTabBarController()
     }
 }

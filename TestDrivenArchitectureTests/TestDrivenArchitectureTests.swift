@@ -22,10 +22,8 @@ class TestDrivenArchitectureTests: XCTestCase {
     }
 
     func testShouldPassIfValidEmail() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-//        self.vm.inputs.emailChanged(email: "test@test.com")
-//        XCTAssertTrue(isValidEmail(email: self.vm.emailChangedProperty.value))
+        self.vm.inputs.emailChanged(email: "test@test.com")
+        XCTAssertTrue(isValidEmail(email: self.vm.emailChangedProperty.value))
     }
 
     func testPerformanceExample() throws {

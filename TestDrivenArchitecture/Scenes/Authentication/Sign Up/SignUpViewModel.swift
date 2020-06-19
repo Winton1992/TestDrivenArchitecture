@@ -17,6 +17,7 @@ struct AuthResult {
 protocol SignUpViewModelInputs {
     func emailChanged(email: String)
     func passwordChanged(password: String)
+    func passwordConfirmChanged(password: String)
     func signUpButtonPressed()
 }
 
@@ -34,14 +35,10 @@ class SignUpViewModel: SignUpViewModelInputs, SignUpViewModelOutputs, SignUpView
     var outputs: SignUpViewModelOutputs { return self }
     let defaults = UserDefaults.standard
     var signUpResult: MutableProperty<AuthResult> = MutableProperty(AuthResult())
-    
+
     init() {
-        let formData = Signal.combineLatest(emailChangedProperty.signal,
-                                            passwordChangedProperty.signal,
-                                            signUpButtonPressedProperty.signal)
-        
-        formData.signal.observeValues { email, password, _ in
-            self.signUp(email: email, password: password)
+        signUpButtonPressedProperty.signal.observeValues { _ in
+            self.validate()
         }
     }
 
@@ -49,23 +46,61 @@ class SignUpViewModel: SignUpViewModelInputs, SignUpViewModelOutputs, SignUpView
     func emailChanged(email: String) {
         emailChangedProperty.value = email
     }
-    
+
     var passwordChangedProperty = MutableProperty<String>("")
     func passwordChanged(password: String) {
         passwordChangedProperty.value = password
     }
-    
+
+    var passwordConfirmChangedProperty = MutableProperty<String>("")
+    func passwordConfirmChanged(password: String) {
+        passwordConfirmChangedProperty.value = password
+    }
+
     var signUpButtonPressedProperty = MutableProperty<Void>(())
     func signUpButtonPressed() {
         signUpButtonPressedProperty.value = ()
     }
-    
+
     private func signUp(email: String, password: String) {
-        // For demo purpose, we store the data locally and in a simple way
+        // For demo purpose, we store the data locally and in a simple way.
         defaults.set(email, forKey: "Email")
         defaults.set(password, forKey: "Password")
         defaults.set(true, forKey: "LoginStatus")
-        signUpResult.value.ifPass = true
-        signUpResult.value.message = ""
+        validationResult(ifPass: true, errorMessage: "")
+    }
+
+    private func validate() {
+        if emailChangedProperty.value.isEmpty == true {
+            validationResult(ifPass: false, errorMessage: Errors.SignUp.emailEmpty)
+        } else if !isValidEmail() {
+            validationResult(ifPass: false, errorMessage: Errors.SignUp.emailInvalid)
+        } else if passwordChangedProperty.value.isEmpty == true {
+            validationResult(ifPass: false, errorMessage: Errors.SignUp.passwordEmpty)
+        } else if !isValidPasswordLength() {
+            validationResult(ifPass: false, errorMessage: Errors.SignUp.passwordLengthInvalid)
+        } else if passwordConfirmChangedProperty.value.isEmpty == true {
+            validationResult(ifPass: false, errorMessage: Errors.SignUp.passwordConfirmEmpty)
+        } else if !doPasswordsMatch() {
+            validationResult(ifPass: false, errorMessage: Errors.SignUp.passwordNotMatch)
+        } else {
+            self.signUp(email: self.emailChangedProperty.value,
+                        password: self.passwordChangedProperty.value)
+        }
+    }
+
+    func validationResult(ifPass: Bool, errorMessage: String) {
+        signUpResult.value.ifPass = ifPass
+        signUpResult.value.message = errorMessage
+    }
+
+    func isValidEmail() -> Bool {
+        return emailChangedProperty.value.contains("@") && emailChangedProperty.value.contains(".")
+    }
+    func isValidPasswordLength() -> Bool {
+        return passwordChangedProperty.value.count >= 8 && passwordChangedProperty.value.count <= 16
+    }
+    func doPasswordsMatch() -> Bool {
+        return passwordChangedProperty.value == passwordConfirmChangedProperty.value
     }
 }
