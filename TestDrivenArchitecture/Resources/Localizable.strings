@@ -6,6 +6,5 @@
   Copyright © 2020 weijie. All rights reserved.
 */
 
-"all_the_textfields_with_connot_be_empty" = "All the textfields with * cannot be empty.";
 "email_or_password_cannot_be_empty" = "Email or password cannot be empty.";
 "email_or_password_is_incorrect" = "Email or password is incorrect.";
