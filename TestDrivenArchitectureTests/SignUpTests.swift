@@ -1,5 +1,5 @@
 //
-//  TestDrivenArchitectureTests.swift
+//  SignUpTests.swift
 //  TestDrivenArchitectureTests
 //
 //  Created by LIWEIJIE on 27/5/20.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import TestDrivenArchitecture
 
-class TestDrivenArchitectureTests: XCTestCase {
+class SignUpTests: XCTestCase {
     
     let vm = SignUpViewModel()
 
@@ -23,7 +23,28 @@ class TestDrivenArchitectureTests: XCTestCase {
 
     func testShouldPassIfValidEmail() throws {
         self.vm.inputs.emailChanged(email: "test@test.com")
-        XCTAssertTrue(isValidEmail(email: self.vm.emailChangedProperty.value))
+        XCTAssertTrue(self.vm.isValidEmail())
+    }
+    
+    func testShouldPassIfInvalidEmail() throws {
+        self.vm.inputs.emailChanged(email: "test.com")
+        XCTAssertFalse(self.vm.isValidEmail())
+    }
+    
+    func testShouldPassIfValidPasswordLength() {
+        self.vm.inputs.passwordChanged(password: "12345678")
+        XCTAssertTrue(self.vm.isValidPasswordLength())
+    }
+    
+    func testShouldPassIfInvalidPasswordLength() {
+        self.vm.inputs.passwordChanged(password: "123")
+        XCTAssertFalse(self.vm.isValidPasswordLength())
+    }
+    
+    func testShouldPassIfPasswordAndRepeatPasswordMatch() {
+        self.vm.inputs.passwordChanged(password: "12345678")
+        self.vm.inputs.passwordConfirmChanged(password: "12345678")
+        XCTAssertTrue(self.vm.doPasswordsMatch())
     }
 
     func testPerformanceExample() throws {
@@ -31,10 +52,6 @@ class TestDrivenArchitectureTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
-    }
-    
-    func isValidEmail(email: String) -> Bool {
-        return email.contains("@") && email.contains(".")
     }
 
 }
