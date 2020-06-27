@@ -11,6 +11,9 @@
 		CAF8AC5B1D3AC37C852FA208 /* Pods_TestDrivenArchitectureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC01147C51D5BCC0E6E7DE3E /* Pods_TestDrivenArchitectureTests.framework */; };
 		E0099F2324936ED1009F9322 /* UINavigationController+Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0099F2224936ED1009F9322 /* UINavigationController+Fade.swift */; };
 		E05527EA2499EE9F00C71366 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05527E92499EE9F00C71366 /* Errors.swift */; };
+		E058A30324A31F6D00AC3CB0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058A30224A31F6D00AC3CB0 /* SettingsViewController.swift */; };
+		E058A30524A31F7A00AC3CB0 /* SettingsViewController+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058A30424A31F7A00AC3CB0 /* SettingsViewController+View.swift */; };
+		E058A30724A31F8800AC3CB0 /* SettingsViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058A30624A31F8800AC3CB0 /* SettingsViewController+TableView.swift */; };
 		E0664DF5249123210081DE5A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0664DF4249123210081DE5A /* SignUpViewController.swift */; };
 		E0664DF92491232C0081DE5A /* SignUpViewController+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0664DF82491232C0081DE5A /* SignUpViewController+View.swift */; };
 		E0664DFD2491233D0081DE5A /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0664DFC2491233C0081DE5A /* SignUpViewModel.swift */; };
@@ -61,6 +64,9 @@
 		CFE813582805F810B2E4A986 /* Pods_TestDrivenArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestDrivenArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0099F2224936ED1009F9322 /* UINavigationController+Fade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Fade.swift"; sourceTree = "<group>"; };
 		E05527E92499EE9F00C71366 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		E058A30224A31F6D00AC3CB0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E058A30424A31F7A00AC3CB0 /* SettingsViewController+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewController+View.swift"; sourceTree = "<group>"; };
+		E058A30624A31F8800AC3CB0 /* SettingsViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewController+TableView.swift"; sourceTree = "<group>"; };
 		E0664DF4249123210081DE5A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E0664DF82491232C0081DE5A /* SignUpViewController+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUpViewController+View.swift"; sourceTree = "<group>"; };
 		E0664DFC2491233C0081DE5A /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -155,6 +161,16 @@
 				E05527E92499EE9F00C71366 /* Errors.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		E058A30124A30CDF00AC3CB0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E058A30224A31F6D00AC3CB0 /* SettingsViewController.swift */,
+				E058A30424A31F7A00AC3CB0 /* SettingsViewController+View.swift */,
+				E058A30624A31F8800AC3CB0 /* SettingsViewController+TableView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		E0664DF32491140D0081DE5A /* Sign Up */ = {
@@ -328,6 +344,7 @@
 		E0B16B272488E34A00AB8EF4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E058A30124A30CDF00AC3CB0 /* Settings */,
 				E0B16B282488E65300AB8EF4 /* MainTabBarViewController.swift */,
 			);
 			path = Main;
@@ -552,8 +569,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0664E012492577D0081DE5A /* ApplicationCoordinator+Navigation.swift in Sources */,
+				E058A30524A31F7A00AC3CB0 /* SettingsViewController+View.swift in Sources */,
 				E0099F2324936ED1009F9322 /* UINavigationController+Fade.swift in Sources */,
 				E0B16B12248625C300AB8EF4 /* SignInViewController.swift in Sources */,
+				E058A30324A31F6D00AC3CB0 /* SettingsViewController.swift in Sources */,
 				E0B16B1A24868ECE00AB8EF4 /* UITextField+Border.swift in Sources */,
 				E0664DFD2491233D0081DE5A /* SignUpViewModel.swift in Sources */,
 				E0664DF92491232C0081DE5A /* SignUpViewController+View.swift in Sources */,
@@ -566,6 +585,7 @@
 				E0B16ABA247E9C6700AB8EF4 /* Strings.swift in Sources */,
 				E0664DF5249123210081DE5A /* SignUpViewController.swift in Sources */,
 				E0B16B292488E65300AB8EF4 /* MainTabBarViewController.swift in Sources */,
+				E058A30724A31F8800AC3CB0 /* SettingsViewController+TableView.swift in Sources */,
 				E0B16B16248625D900AB8EF4 /* SignInViewModel.swift in Sources */,
 				E0B16A88247E89FC00AB8EF4 /* SceneDelegate.swift in Sources */,
 				E0B16B092484F85A00AB8EF4 /* ApplicationCoordinator.swift in Sources */,

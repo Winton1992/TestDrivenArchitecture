@@ -37,8 +37,15 @@ class ApplicationCoordinator {
     }
     
     func setupTabBarController() {
-        let mainVC = MainTabBarViewController()
-        let mainNavigationController = UINavigationController(rootViewController: mainVC)
-        self.window.rootViewController = mainNavigationController
+        let tabBarController = MainTabBarViewController()
+        
+        // Setting ViewController
+        let settingVC = SettingsViewController()
+        settingVC.tabBarItem.title = "Settings"
+        settingVC.tabBarItem.image = Asset.Images.settings.image
+        let settingVCWithNavigation = UINavigationController(rootViewController: settingVC)
+        
+        tabBarController.setViewControllers([settingVCWithNavigation], animated: true)
+        self.window.rootViewController = tabBarController
     }
 }

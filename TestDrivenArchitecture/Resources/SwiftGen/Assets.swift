@@ -24,6 +24,7 @@ internal enum Asset {
     internal static let wine = ColorAsset(name: "Wine")
   }
   internal enum Images {
+    internal static let settings = ImageAsset(name: "settings")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
