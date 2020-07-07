@@ -18,8 +18,9 @@ extension SettingsViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-//        tableView.separatorStyle = .none
-//        tableView.register(UserInfoTableViewCell.self)
+        tableView.separatorStyle = .none
+        tableView.register(UserInfoTableViewCell.self, forCellReuseIdentifier: "UserInfoCell")
+        tableView.rowHeight = 70
 //        tableView.register(SettingsTableViewCell.self)
 //        tableView.register(SettingsSignoutTableViewCell.self)
         view.addSubview(tableView)

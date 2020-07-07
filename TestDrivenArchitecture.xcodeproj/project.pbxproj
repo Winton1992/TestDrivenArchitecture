@@ -10,6 +10,7 @@
 		022A183FF46493DEDDFCED27 /* Pods_TestDrivenArchitecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE813582805F810B2E4A986 /* Pods_TestDrivenArchitecture.framework */; };
 		CAF8AC5B1D3AC37C852FA208 /* Pods_TestDrivenArchitectureTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC01147C51D5BCC0E6E7DE3E /* Pods_TestDrivenArchitectureTests.framework */; };
 		E0099F2324936ED1009F9322 /* UINavigationController+Fade.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0099F2224936ED1009F9322 /* UINavigationController+Fade.swift */; };
+		E013D93524A76318001D7842 /* UserInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E013D93424A76318001D7842 /* UserInfoTableViewCell.swift */; };
 		E05527EA2499EE9F00C71366 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05527E92499EE9F00C71366 /* Errors.swift */; };
 		E058A30324A31F6D00AC3CB0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058A30224A31F6D00AC3CB0 /* SettingsViewController.swift */; };
 		E058A30524A31F7A00AC3CB0 /* SettingsViewController+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058A30424A31F7A00AC3CB0 /* SettingsViewController+View.swift */; };
@@ -63,6 +64,7 @@
 		B51B4DC1331BE4AFEB72E257 /* Pods-TestDrivenArchitectureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestDrivenArchitectureTests.release.xcconfig"; path = "Target Support Files/Pods-TestDrivenArchitectureTests/Pods-TestDrivenArchitectureTests.release.xcconfig"; sourceTree = "<group>"; };
 		CFE813582805F810B2E4A986 /* Pods_TestDrivenArchitecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestDrivenArchitecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0099F2224936ED1009F9322 /* UINavigationController+Fade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Fade.swift"; sourceTree = "<group>"; };
+		E013D93424A76318001D7842 /* UserInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewCell.swift; sourceTree = "<group>"; };
 		E05527E92499EE9F00C71366 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		E058A30224A31F6D00AC3CB0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E058A30424A31F7A00AC3CB0 /* SettingsViewController+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewController+View.swift"; sourceTree = "<group>"; };
@@ -153,6 +155,22 @@
 				E0099F2224936ED1009F9322 /* UINavigationController+Fade.swift */,
 			);
 			path = UINavigationController;
+			sourceTree = "<group>";
+		};
+		E013D93224A762DB001D7842 /* UITableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E013D93324A762EF001D7842 /* Settings */,
+			);
+			path = UITableViewCell;
+			sourceTree = "<group>";
+		};
+		E013D93324A762EF001D7842 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E013D93424A76318001D7842 /* UserInfoTableViewCell.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		E05527E82499EE8E00C71366 /* Enums */ = {
@@ -327,6 +345,7 @@
 		E0B16B1724868E8F00AB8EF4 /* Custom Component */ = {
 			isa = PBXGroup;
 			children = (
+				E013D93224A762DB001D7842 /* UITableViewCell */,
 				E0099F2124936DAB009F9322 /* UINavigationController */,
 				E0B16B1824868EA400AB8EF4 /* UITextField */,
 			);
@@ -568,6 +587,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E013D93524A76318001D7842 /* UserInfoTableViewCell.swift in Sources */,
 				E0664E012492577D0081DE5A /* ApplicationCoordinator+Navigation.swift in Sources */,
 				E058A30524A31F7A00AC3CB0 /* SettingsViewController+View.swift in Sources */,
 				E0099F2324936ED1009F9322 /* UINavigationController+Fade.swift in Sources */,

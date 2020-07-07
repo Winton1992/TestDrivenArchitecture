@@ -15,6 +15,7 @@ struct AuthResult {
 }
 
 protocol SignUpViewModelInputs {
+    func usernameChanged(username: String)
     func emailChanged(email: String)
     func passwordChanged(password: String)
     func passwordConfirmChanged(password: String)
@@ -41,6 +42,11 @@ class SignUpViewModel: SignUpViewModelInputs, SignUpViewModelOutputs, SignUpView
             self.validate()
         }
     }
+    
+    var usernameChangedProperty = MutableProperty<String>("")
+    func usernameChanged(username: String) {
+        usernameChangedProperty.value = username
+    }
 
     var emailChangedProperty = MutableProperty<String>("")
     func emailChanged(email: String) {
@@ -62,8 +68,9 @@ class SignUpViewModel: SignUpViewModelInputs, SignUpViewModelOutputs, SignUpView
         signUpButtonPressedProperty.value = ()
     }
 
-    private func signUp(email: String, password: String) {
+    private func signUp(username: String, email: String, password: String) {
         // For demo purpose, we store the data locally and in a simple way.
+        defaults.set(username, forKey: "Username")
         defaults.set(email, forKey: "Email")
         defaults.set(password, forKey: "Password")
         defaults.set(true, forKey: "LoginStatus")
@@ -71,7 +78,9 @@ class SignUpViewModel: SignUpViewModelInputs, SignUpViewModelOutputs, SignUpView
     }
 
     private func validate() {
-        if emailChangedProperty.value.isEmpty == true {
+        if isValidUserName() == false {
+            validationResult(ifPass: false, errorMessage: Errors.SignUp.usernameEmpty)
+        } else if emailChangedProperty.value.isEmpty == true {
             validationResult(ifPass: false, errorMessage: Errors.SignUp.emailEmpty)
         } else if !isValidEmail() {
             validationResult(ifPass: false, errorMessage: Errors.SignUp.emailInvalid)
@@ -84,7 +93,8 @@ class SignUpViewModel: SignUpViewModelInputs, SignUpViewModelOutputs, SignUpView
         } else if !doPasswordsMatch() {
             validationResult(ifPass: false, errorMessage: Errors.SignUp.passwordNotMatch)
         } else {
-            self.signUp(email: self.emailChangedProperty.value,
+            self.signUp(username: self.usernameChangedProperty.value,
+                        email: self.emailChangedProperty.value,
                         password: self.passwordChangedProperty.value)
         }
     }
@@ -92,6 +102,10 @@ class SignUpViewModel: SignUpViewModelInputs, SignUpViewModelOutputs, SignUpView
     func validationResult(ifPass: Bool, errorMessage: String) {
         signUpResult.value.ifPass = ifPass
         signUpResult.value.message = errorMessage
+    }
+    
+    func isValidUserName() -> Bool {
+        return usernameChangedProperty.value.count > 1
     }
 
     func isValidEmail() -> Bool {

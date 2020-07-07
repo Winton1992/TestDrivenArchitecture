@@ -13,11 +13,24 @@ import SnapKit
 extension SignUpViewController {
 
     func setupScene() {
+        setupUsernameTextField()
         setupEmailTextField()
         setupPasswordTextField()
         setupRePasswordTextField()
         setupErrorLabel()
         setupSignUpButton()
+    }
+    
+    private func setupUsernameTextField() {
+        usernameTextField.setAttributes(placeHolderValue: "Username")
+        
+        view.addSubview(usernameTextField)
+        
+        usernameTextField.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(bounds.size.height * 0.25)
+            make.height.equalTo(60)
+            make.left.right.equalToSuperview().inset(bounds.size.width * 0.05)
+        }
     }
     
     private func setupEmailTextField() {
@@ -26,9 +39,10 @@ extension SignUpViewController {
         view.addSubview(emailTextField)
         
         emailTextField.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(bounds.size.height * 0.25)
-            make.height.equalTo(60)
-            make.left.right.equalToSuperview().inset(bounds.size.width * 0.05)
+            make.top.equalTo(usernameTextField.snp.bottom).offset(10)
+            make.height.equalTo(usernameTextField.snp.height)
+            make.left.equalTo(usernameTextField.snp.left)
+            make.right.equalTo(usernameTextField.snp.right)
         }
     }
 
@@ -40,9 +54,9 @@ extension SignUpViewController {
 
         passwordTextField.snp.makeConstraints { make in
             make.top.equalTo(emailTextField.snp.bottom).offset(10)
-            make.height.equalTo(emailTextField.snp.height)
-            make.left.equalTo(emailTextField.snp.left)
-            make.right.equalTo(emailTextField.snp.right)
+            make.height.equalTo(usernameTextField.snp.height)
+            make.left.equalTo(usernameTextField.snp.left)
+            make.right.equalTo(usernameTextField.snp.right)
         }
     }
     
@@ -54,9 +68,9 @@ extension SignUpViewController {
 
         passwordConfirmTextField.snp.makeConstraints { make in
             make.top.equalTo(passwordTextField.snp.bottom).offset(10)
-            make.height.equalTo(emailTextField.snp.height)
-            make.left.equalTo(emailTextField.snp.left)
-            make.right.equalTo(emailTextField.snp.right)
+            make.height.equalTo(usernameTextField.snp.height)
+            make.left.equalTo(usernameTextField.snp.left)
+            make.right.equalTo(usernameTextField.snp.right)
         }
     }
     
@@ -85,9 +99,9 @@ extension SignUpViewController {
 
         signUpButton.snp.makeConstraints { make in
             make.top.equalTo(passwordConfirmTextField.snp.bottom).offset(50)
-            make.height.equalTo(emailTextField.snp.height)
-            make.left.equalTo(emailTextField.snp.left)
-            make.right.equalTo(emailTextField.snp.right)
+            make.height.equalTo(usernameTextField.snp.height)
+            make.left.equalTo(usernameTextField.snp.left)
+            make.right.equalTo(usernameTextField.snp.right)
         }
     }
 }

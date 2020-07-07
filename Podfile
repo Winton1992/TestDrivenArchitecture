@@ -8,6 +8,7 @@ target 'TestDrivenArchitecture' do
   # Pods for TestDrivenArchitecture
   pod "Device", '~> 3.2.1'
   pod 'IQKeyboardManagerSwift'
+  pod 'Kingfisher', '~> 5.0'
   pod 'ReactiveCocoa'
   pod 'ReactiveSwift', '~> 6.1'
   pod 'SwiftGen', '~> 6.0'

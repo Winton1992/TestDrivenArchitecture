@@ -15,11 +15,15 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserInfoCell", for: indexPath)
         return cell
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 1
     }
+    
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "Profile"
+//    }
 }

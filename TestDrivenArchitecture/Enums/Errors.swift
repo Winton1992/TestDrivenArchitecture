@@ -10,6 +10,7 @@ import Foundation
 
 enum Errors {
     enum SignUp {
+        static let usernameEmpty = "Username cannot be empty."
         static let emailEmpty = "Email address cannot be empty."
         static let emailInvalid = "Email format is incorrect."
         static let passwordEmpty = "The Password field cannot be empty."

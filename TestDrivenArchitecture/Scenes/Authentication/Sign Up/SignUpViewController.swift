@@ -17,6 +17,7 @@ protocol SignUpViewControllerDelegate: class {
 class SignUpViewController: UIViewController, UITextFieldDelegate {
 
     var bounds = UIScreen.main.bounds
+    var usernameTextField: UITextField = UITextField()
     var emailTextField: UITextField = UITextField()
     var passwordTextField: UITextField = UITextField()
     var passwordConfirmTextField: UITextField = UITextField()
@@ -46,6 +47,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
 
     private func setupBinding() {
+        usernameTextField.reactive
+            .textValues
+            .observeValues(self.viewModel.inputs.usernameChanged(username:))
         emailTextField.reactive
             .textValues
             .observeValues(self.viewModel.inputs.emailChanged(email:))

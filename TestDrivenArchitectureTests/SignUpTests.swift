@@ -20,13 +20,18 @@ class SignUpTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testShouldPassIfValidUsername() {
+        self.vm.inputs.usernameChanged(username: "Winton")
+        XCTAssertTrue(self.vm.isValidUserName())
+    }
 
-    func testShouldPassIfValidEmail() throws {
+    func testShouldPassIfValidEmail() {
         self.vm.inputs.emailChanged(email: "test@test.com")
         XCTAssertTrue(self.vm.isValidEmail())
     }
     
-    func testShouldPassIfInvalidEmail() throws {
+    func testShouldPassIfInvalidEmail() {
         self.vm.inputs.emailChanged(email: "test.com")
         XCTAssertFalse(self.vm.isValidEmail())
     }
