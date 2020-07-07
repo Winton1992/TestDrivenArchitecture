@@ -65,7 +65,6 @@ class UserInfoTableViewCell: UITableViewCell {
     private func setupAccountLabel() {
         accountLabel.font = UIFont.systemFont(ofSize: 14)
         accountLabel.textColor = .gray
-        //accountLabel.translatesAutoresizingMaskIntoConstraints = false
         if let userEmail = defaults.string(forKey: "Email") {
             accountLabel.text = "Account: \(userEmail)"
         }

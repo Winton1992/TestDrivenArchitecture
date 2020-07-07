@@ -21,8 +21,6 @@ extension SettingsViewController {
         tableView.separatorStyle = .none
         tableView.register(UserInfoTableViewCell.self, forCellReuseIdentifier: "UserInfoCell")
         tableView.rowHeight = 70
-//        tableView.register(SettingsTableViewCell.self)
-//        tableView.register(SettingsSignoutTableViewCell.self)
         view.addSubview(tableView)
 
         tableView.snp.makeConstraints { make in
