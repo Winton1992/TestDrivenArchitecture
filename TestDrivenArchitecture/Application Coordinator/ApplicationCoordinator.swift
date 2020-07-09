@@ -38,14 +38,23 @@ class ApplicationCoordinator {
     
     func setupTabBarController() {
         let tabBarController = MainTabBarViewController()
-        
+
         // Setting ViewController
-        let settingVC = SettingsViewController()
-        settingVC.tabBarItem.title = "Settings"
-        settingVC.tabBarItem.image = Asset.Images.settings.image
-        let settingVCWithNavigation = UINavigationController(rootViewController: settingVC)
+        let accountVC = AccountViewController()
+        accountVC.tabBarItem.title = "Me"
+        accountVC.tabBarItem.image = Asset.Images.profile.image
+        accountVC.delegate = self
+        let settingVCWithNavigation = UINavigationController(rootViewController: accountVC)
         
         tabBarController.setViewControllers([settingVCWithNavigation], animated: true)
         self.window.rootViewController = tabBarController
+    }
+    
+    func logout() {
+        self.defaults.set(false, forKey: "LoginStatus")
+        let vm = SignInViewModel()
+        let vc = SignInViewController(viewModel: vm)
+        vc.delegate = self
+        self.window.rootViewController = vc
     }
 }

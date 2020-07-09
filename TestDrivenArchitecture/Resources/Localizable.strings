@@ -6,5 +6,6 @@
   Copyright © 2020 weijie. All rights reserved.
 */
 
+"app_version" = "Verison %@ Build %@";
 "email_or_password_cannot_be_empty" = "Email or password cannot be empty.";
 "email_or_password_is_incorrect" = "Email or password is incorrect.";

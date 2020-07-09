@@ -22,7 +22,7 @@ class UserInfoTableViewCell: UITableViewCell {
 
     @available(*, unavailable)
     required init?(coder aDecoder: NSCoder) {
-      fatalError("init(coder:) has not been implemented")
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func setupCell() {

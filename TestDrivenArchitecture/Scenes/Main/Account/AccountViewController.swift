@@ -1,5 +1,5 @@
 //
-//  SettingsViewController.swift
+//  AccountViewController.swift
 //  TestDrivenArchitecture
 //
 //  Created by LIWEIJIE on 24/6/20.
@@ -9,7 +9,12 @@
 import Foundation
 import UIKit
 
-class SettingsViewController: UIViewController {
+protocol AccountViewControllerDelegate: class {
+    func accountViewControllerDidLogout(_ source: AccountViewController)
+}
+
+class AccountViewController: UIViewController {
+    weak var delegate: AccountViewControllerDelegate?
     var tableView: UITableView = UITableView()
     
     override func loadView() {
@@ -20,6 +25,9 @@ class SettingsViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        
+    }
+    
+    func logout() {
+        self.delegate?.accountViewControllerDidLogout(self)
     }
 }

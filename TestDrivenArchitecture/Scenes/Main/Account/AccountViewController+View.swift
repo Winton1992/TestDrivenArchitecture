@@ -1,5 +1,5 @@
 //
-//  SettingsViewController+View.swift
+//  AccountViewController+View.swift
 //  TestDrivenArchitecture
 //
 //  Created by LIWEIJIE on 24/6/20.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension SettingsViewController {
+extension AccountViewController {
 
     func setupScene() {
         setupTableView()
@@ -20,7 +20,9 @@ extension SettingsViewController {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.register(UserInfoTableViewCell.self, forCellReuseIdentifier: "UserInfoCell")
-        tableView.rowHeight = 70
+        tableView.register(DefaultTableViewCell.self, forCellReuseIdentifier: "DefaultCell")
+        tableView.register(SignOutTableviewCell.self, forCellReuseIdentifier: "SignOutCell")
+        
         view.addSubview(tableView)
 
         tableView.snp.makeConstraints { make in

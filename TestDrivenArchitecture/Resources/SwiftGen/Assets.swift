@@ -24,6 +24,7 @@ internal enum Asset {
     internal static let wine = ColorAsset(name: "Wine")
   }
   internal enum Images {
+    internal static let profile = ImageAsset(name: "profile")
     internal static let settings = ImageAsset(name: "settings")
   }
 }
